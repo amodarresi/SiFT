@@ -1,0 +1,13 @@
+## -*- Mode: python; py-indent-offset: 4; indent-tabs-mode: nil; coding: utf-8; -*-
+
+def build(bld):
+    if not bld.env['ENABLE_EXAMPLES']:
+        return;
+
+    obj = bld.create_ns3_program('sift', 
+    			['core', 'network', 'internet', 'applications', 'mobility', 'config-store', 'wifi', 'sift'])
+    obj.source = 'sift.cc'
+    
+    obj = bld.create_ns3_program('siftSample,
+                ['core', 'network', 'internet', 'applications', 'mobility', 'config-store', 'wifi', 'sift'])
+    obj.source = 'siftSample.cc'
